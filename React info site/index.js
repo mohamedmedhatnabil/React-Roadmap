@@ -2,58 +2,17 @@
     1- it's Composable
         composability => it goes quite a bit deeper
         we will make our components mush more composable and reusable
-
+    2- it's Declarative means what should be done?
+        like I tell him what to do and don't worry about the details OF HOW TO GET IT DONE
+        declarative => it makes our code more readable
+        we will write less code and focus on what the UI should look like
+        imperative => how should it be done 
+        describe to me every step on how to do something, and i will do it
 */
 
-
-function Navbar() {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">Navbar</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                    <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Link</a>
-                </li>
-                <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                    </a>
-                    <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a className="dropdown-item" href="#">Action</a>
-                    <a className="dropdown-item" href="#">Another action</a>
-                    <div className="dropdown-divider"></div>
-                    <a className="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link disabled" href="#">Disabled</a>
-                </li>
-                </ul>
-                <form className="form-inline my-2 my-lg-0">
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
-    )
-};
-function MainContent() {
-    return (
-        <h1>I'm learning React!</h1>
-    )
-};
-ReactDOM.render(
-    <div>
-        <Navbar />
-        <MainContent />
-    </div>,
-    document.getElementById("root")
-);
+const h1Element = document.createElement('h1');
+h1Element.textContent = 'Hello, React!';
+h1Element.className = 'header';
+//const rootDiv = document.getElementById('root');
+//rootDiv.appendChild(h1Element);
+document.getElementById('root').append(h1Element);
