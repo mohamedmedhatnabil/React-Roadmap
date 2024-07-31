@@ -1,15 +1,22 @@
-import React from "react";
-import './main.css'; // Import your own styles here if needed
+const products = [
+  { title: 'Cabbage', isFruit: false, id: 1 },
+  { title: 'Garlic', isFruit: false, id: 2 },
+  { title: 'Apple', isFruit: true, id: 3 },
+];
 
-function App() {
+export default function ShoppingList() {
+  const listItems = products.map(product =>
+    <li
+      key={product.id}
+      style={{
+        color: product.isFruit ? 'magenta' : 'darkgreen'
+      }}
+    >
+      {product.title}
+    </li>
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to My Website</h1>
-        <p>This is the homepage of my React application.</p>
-      </header>
-    </div>
+    <ul>{listItems}</ul>
   );
 }
-
-export default App;
