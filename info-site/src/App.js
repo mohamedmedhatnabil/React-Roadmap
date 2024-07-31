@@ -1,10 +1,19 @@
+import { useState } from 'react';
 export default function MyButton() {
-   const handleClick = handleClick => alert('You clicked me!');
+   const [count, setCount] = useState(0);
+   const handleClick = handleClick => setCount(count+1);
+   const restartCount = restartCount => setCount(0);
 
 
   return (
-    <button onClick={handleClick}>
-      Click me
-    </button>
+    <div>
+      <button onClick={handleClick}>
+        Number Of Clicks Is {count}
+      </button>
+      <button onClick={restartCount}>
+        Restart Count
+      </button>
+    </div>
+    
   );
 }
