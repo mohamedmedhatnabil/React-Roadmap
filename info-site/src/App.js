@@ -1,15 +1,21 @@
-import React from "react";
-import './main.css'; // Import your own styles here if needed
+import { useState } from 'react';
 
-function App() {
+export default function MyApp() {
+  const [count, setCount] = useState(0);
+  const handleClick = handleClick => setCount(count + 1);
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to My Website</h1>
-        <p>This is the homepage of my React application.</p>
-      </header>
+    <div>
+      <h1>Counters that update together</h1>
+      <MyButton count={count} onClick={handleClick} />
+      <MyButton count={count} onClick={handleClick} />
     </div>
   );
 }
 
-export default App;
+function MyButton({ count, onClick }) {
+  return (
+    <button onClick={onClick}>
+      Clicked {count} times
+    </button>
+  );
+}
